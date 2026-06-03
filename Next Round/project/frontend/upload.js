@@ -47,7 +47,7 @@ async function uploadResume(file) {
     const formData = new FormData();
     formData.append('resume', file);
     try {
-        const res = await fetch('http://localhost:5000/upload', {
+        const res = await fetch('https://next-round-k2bk.onrender.com/upload', {
             method: 'POST',
             body: formData
         });
