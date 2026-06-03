@@ -10,7 +10,7 @@ window.onload = () => {
 
 async function loadHistory(userId) {
     try {
-        const res = await fetch(`http://localhost:5000/history/${userId}`);
+        const res = await fetch(`https://next-round-k2bk.onrender.com/history/${userId}`);
         const interviews = await res.json();
 
         const historyList = document.getElementById('historyList');
