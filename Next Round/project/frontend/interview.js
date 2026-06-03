@@ -224,7 +224,7 @@ async function nextQuestion() {
             localStorage.setItem('evaluationData', JSON.stringify(evaluation));
             localStorage.setItem('resumeSuggestions', localStorage.getItem('resumeSuggestions') || '{}');
 
-            window.location.href = 'results.html';
+            window.location.href = 'result.html';
         } catch (err) {
             console.error('Evaluation error:', err);
             document.getElementById('questionText').textContent = 'Evaluation failed. Please try again.';
