@@ -5,7 +5,7 @@ const multer = require('multer');
 const PDFParser = require('pdf2json');
 const cors = require('cors');
 const Groq = require('groq-sdk');
-const Interview = require('./models/InterviewModel');
+const Interview = require('./models/interviewModel');
 
 const app = express();
 app.use(cors());
