@@ -20,7 +20,7 @@ async function generateQuestions(resumeData) {
     document.getElementById('questionText').textContent = 'Generating your personalized questions...';
     
     try {
-        const res = await fetch('http://localhost:5000/generate-questions', {
+        const res = await fetch('https://next-round-k2bk.onrender.com/generate-questions', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ resumeData })
@@ -212,7 +212,7 @@ async function nextQuestion() {
         const resumeData = JSON.parse(localStorage.getItem('resumeData'));
 
         try {
-            const res = await fetch('http://localhost:5000/evaluate', {
+            const res = await fetch('https://next-round-k2bk.onrender.com/evaluate', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ answers, resumeData })
