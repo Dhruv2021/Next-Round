@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextRound — Upload Resume</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="upload.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-logo">Next Round</div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Feedback</a></li>
+            <li><a href="#">History</a></li>
+        </ul>
+        <button class="nav-btn" onclick="signInWithGoogle()">Sign In</button>
+    </nav>
+
+    <!-- Upload Section -->
+    <section class="upload-section">
+        <h1 class="upload-title">Upload Your Resume</h1>
+
+        <div class="upload-box" id="uploadBox">
+            <div class="upload-icon">📄</div>
+            <p class="upload-text">Drag & Drop PDF</p>
+            <input type="file" id="fileInput" accept=".pdf" hidden>
+        </div>
+
+        <div id="uploadError" style="
+            display: none;
+            color: #ff4444;
+            background: rgba(255, 68, 68, 0.1);
+            border: 1px solid rgba(255, 68, 68, 0.3);
+            padding: 12px 24px;
+            border-radius: 12px;
+            margin-top: 16px;
+            font-size: 14px; 
+            font-family: 'Google Sans Flex', sans-serif;
+            ">
+              
+
+        </div>
+
+    </section>
+
+    <!-- Analysis Section (hidden until upload) -->
+    <section class="analysis-section" id="analysisSection" style="display:none;">
+        <div class="resume-preview">
+            <h3>Resume Preview</h3>
+            <div class="preview-box" id="previewBox"></div>
+        </div>
+
+        <div class="ai-summary">
+            <h3>AI Analysis Summary</h3>
+
+            <div class="summary-card">
+                <h4>Skills</h4>
+                <div class="tags" id="skillsTags"></div>
+            </div>
+
+            <div class="summary-card">
+                <h4>Experience</h4>
+                <ul id="experienceList"></ul>
+            </div>
+
+            <div class="summary-card">
+                <h4>Projects</h4>
+                <ul id="projectsList"></ul>
+            </div>
+
+            <div class="summary-card">
+                <h4>Education</h4>
+                <ul id="educationList"></ul>
+            </div>
+
+            <div class="summary-card">
+  <h4>Resume Score</h4>
+  <div id="resumeScore" style="font-size: 32px; font-weight: 700; color: #00ffcc;"></div>
+</div>
+
+<div class="summary-card">
+  <h4>Strengths</h4>
+  <ul id="strengthsList"></ul>
+</div>
+
+<div class="summary-card">
+  <h4>Weaknesses</h4>
+  <ul id="weaknessesList"></ul>
+</div>
+
+<div class="summary-card">
+  <h4>Improvements</h4>
+  <ul id="improvementsList"></ul>
+</div>
+
+            <button class="start-btn" onclick="startInterview()">Start Interview →</button>
+        </div>
+    </section>
+
+    <script src="auth.js"></script>
+    <script src="upload.js"></script>
+</body>
+</html>

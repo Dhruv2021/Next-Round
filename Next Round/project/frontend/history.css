@@ -1,0 +1,102 @@
+.history-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 40px;
+}
+
+.history-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    font-family: "Marcellus", serif;
+    margin-bottom: 28px;
+}
+
+.loading-text {
+    color: rgba(255,255,255,0.4);
+    font-size: 14px;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.history-item {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 24px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.history-item:hover {
+    border-color: rgba(0, 255, 204, 0.3);
+    transform: translateY(-2px);
+}
+
+.history-left h3 {
+    font-size: 16px;
+    color: #ffffff;
+    margin: 0 0 6px 0;
+    font-family: "Marcellus", serif;
+}
+
+.history-left p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    margin: 0;
+}
+
+.history-scores {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.score-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.score-badge span:first-child {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.score-badge span:last-child {
+    font-size: 20px;
+    font-weight: 700;
+    color: #00ffcc;
+}
+
+.view-btn {
+    background: transparent;
+    border: 1px solid rgba(0, 255, 204, 0.3);
+    color: #00ffcc;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.view-btn:hover {
+    background: rgba(0, 255, 204, 0.08);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px;
+    color: rgba(255,255,255,0.3);
+    font-size: 15px;
+}

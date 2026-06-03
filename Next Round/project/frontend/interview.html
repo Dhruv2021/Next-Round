@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextRound — Interview</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="interview.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-logo">Next Round</div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="upload.html">Upload</a></li>
+            <li><a href="#" class="active">Interview</a></li>
+            <li><a href="#">Feedback</a></li>
+        </ul>
+        <button class="nav-btn" onclick="signInWithGoogle()">Sign In</button>
+    </nav>
+
+        <div id="browserWarning" class="browser-warning">
+    ⚠️ Voice interviews work best in Google Chrome. Brave may cause microphone/transcript issues.
+    </div>
+
+    <!-- Interview Grid -->
+    <div class="interview-container">
+
+        <!-- Left: AI Interviewer -->
+        <div class="card interviewer-card">
+            <h3>AI Interviewer</h3>
+            <div class="avatar-container">
+                <div class="avatar-ring">
+                    <div class="avatar-icon">🤖</div>
+                </div>
+                <div class="sound-wave" id="aiWave">
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                    <span></span>
+                </div>
+            </div>
+            <p class="interviewer-name">NextRound AI</p>
+        </div>
+
+        <!-- Center: Progress + Question + Mic -->
+        <div class="center-column">
+
+            <!-- Progress Tracker -->
+            <div class="card progress-card">
+                <div class="progress-header">
+                    <h3>Progress Tracker</h3>
+                    <span class="question-count" id="questionCount">Question 1 of 10</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="progressFill" style="width: 10%"></div>
+                </div>
+            </div>
+
+            <!-- Question Card -->
+            <div class="card question-card">
+                <h4>Question</h4>
+                <p class="question-text" id="questionText">
+                    Loading your personalized question...
+                </p>
+            </div>
+
+            <!-- Microphone Controls -->
+            <div class="card mic-card">
+                <div class="mic-wave">
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                    <span></span>
+                </div>
+                <button class="mic-btn" id="micBtn" onclick="toggleMic()">
+                    🎤
+                </button>
+                <div class="mic-wave">
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                    <span></span>
+                </div>
+                <p class="mic-status" id="micStatus">Click to speak</p>
+                <button class="playback-btn" onclick="playQuestion()">🔊 Voice Playback</button>
+            </div>
+
+        </div>
+
+        <!-- Right: Live Transcript -->
+        <div class="card transcript-card">
+            <h3>Live Transcript</h3>
+            <div class="transcript-box" id="transcriptBox">
+                <p class="transcript-placeholder">Your speech will appear here in real-time...</p>
+            </div>
+            <button class="next-btn" id="nextBtn" onclick="nextQuestion()">
+                Next Question →
+            </button>
+        </div>
+
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="interview.js"></script>
+</body>
+</html>

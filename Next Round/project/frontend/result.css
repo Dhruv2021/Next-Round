@@ -1,0 +1,236 @@
+.results-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 40px;
+}
+
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.results-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    font-family: "Marcellus", serif;
+    margin: 0;
+}
+
+.download-btn {
+    background: transparent;
+    border: 1px solid rgba(0, 255, 204, 0.4);
+    color: #00ffcc;
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.download-btn:hover {
+    background: rgba(0, 255, 204, 0.08);
+    box-shadow: 0 0 16px rgba(0, 255, 204, 0.3);
+}
+
+/* Top Row */
+.top-row {
+    display: grid;
+    grid-template-columns: 220px 1fr 260px;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 24px;
+    font-family: "Google Sans Flex", sans-serif;
+
+}
+
+.card h3 {
+    font-size: 15px;
+    color: #ffffff;
+    margin: 0 0 16px 0;
+    font-family: "Marcellus", serif;
+}
+
+/* Score Card */
+.score-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Google Sans Flex", sans-serif;
+
+}
+
+.score-circle-container {
+    position: relative;
+    width: 160px;
+    height: 160px;
+}
+
+.score-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    font-weight: 700;
+    color: #00ffcc;
+    font-family: "Google Sans Flex", sans-serif;
+
+}
+
+/* Radar Card */
+.radar-card canvas {
+    max-height: 200px;
+}
+
+/* Ratings Card */
+.ratings-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.rating-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rating-label {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    width: 110px;
+    flex-shrink: 0;
+}
+
+.rating-bar-bg {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    height: 8px;
+    overflow: hidden;
+}
+
+.rating-bar-fill {
+    height: 100%;
+    border-radius: 10px;
+    width: 0%;
+    transition: width 1s ease;
+}
+
+.rating-bar-fill.teal { background: #00ffcc; box-shadow: 0 0 8px rgba(0,255,204,0.5); }
+.rating-bar-fill.yellow { background: #ffd700; box-shadow: 0 0 8px rgba(255,215,0,0.5); }
+.rating-bar-fill.pink { background: #ff6eb4; box-shadow: 0 0 8px rgba(255,110,180,0.5); }
+.rating-bar-fill.purple { background: #a78bfa; box-shadow: 0 0 8px rgba(167,139,250,0.5); }
+
+.rating-value {
+    font-size: 13px;
+    color: #ffffff;
+    width: 30px;
+    text-align: right;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    font-family: "Marcellus", serif;
+    margin-bottom: 16px;
+
+}
+
+/* Feedback Row */
+.feedback-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 28px;
+    font-family: "Google Sans Flex", sans-serif;
+
+}
+
+.feedback-card ul {
+    margin: 0;
+    padding-left: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.card-label {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 12px 0;
+}
+
+.card-label.strengths { color: #00ffcc; }
+.card-label.weaknesses { color: #ff6b6b; }
+.card-label.improvements { color: #ffd700; }
+
+/* Question Feedback */
+.questions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+    font-family: "Google Sans Flex", sans-serif;
+
+}
+
+.question-feedback-item {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 20px 24px;
+    font-family: "Google Sans Flex", sans-serif;
+
+}
+
+.qf-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.qf-question {
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 600;
+    flex: 1;
+}
+
+.qf-score {
+    font-size: 13px;
+    color: #00ffcc;
+    background: rgba(0, 255, 204, 0.1);
+    border: 1px solid rgba(0, 255, 204, 0.2);
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-left: 12px;
+    white-space: nowrap;
+}
+
+.qf-answer {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.qf-feedback {
+    font-size: 13px;
+    color: rgba(255, 215, 0, 0.8);
+    line-height: 1.6;
+}

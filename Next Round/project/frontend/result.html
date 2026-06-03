@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextRound — Results</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="result.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">NEXT ROUND</div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="upload.html">Upload</a></li>
+            <li><a href="#" class="active">Report</a></li>
+            <li><a href="history.html">History</a></li>
+        </ul>
+        <button class="nav-btn" onclick="signInWithGoogle()">Sign In</button>
+    </nav>
+
+    <div class="results-container">
+
+        <!-- Header -->
+        <div class="results-header">
+            <h1 class="results-title">Interview Report</h1>
+            <button class="download-btn" onclick="downloadReport()">⬇ Download Report</button>
+        </div>
+
+        <!-- Top Row: Overall Score + Radar Chart + Ratings -->
+        <div class="top-row">
+
+            <!-- Overall Score -->
+            <div class="card score-card">
+                <h3>Overall Score</h3>
+                <div class="score-circle-container">
+                    <canvas id="scoreCircle" width="160" height="160"></canvas>
+                    <div class="score-text" id="scoreText">--</div>
+                </div>
+            </div>
+
+            <!-- Radar Chart -->
+            <div class="card radar-card">
+                <h3>Radar Chart</h3>
+                <canvas id="radarChart"></canvas>
+            </div>
+
+            <!-- Ratings -->
+            <div class="card ratings-card">
+                <h3>Ratings</h3>
+                <div class="rating-item">
+                    <span class="rating-label">Communication</span>
+                    <div class="rating-bar-bg">
+                        <div class="rating-bar-fill teal" id="commBar"></div>
+                    </div>
+                    <span class="rating-value" id="commValue">--</span>
+                </div>
+                <div class="rating-item">
+                    <span class="rating-label">Confidence</span>
+                    <div class="rating-bar-bg">
+                        <div class="rating-bar-fill yellow" id="confBar"></div>
+                    </div>
+                    <span class="rating-value" id="confValue">--</span>
+                </div>
+                <div class="rating-item">
+                    <span class="rating-label">Technical</span>
+                    <div class="rating-bar-bg">
+                        <div class="rating-bar-fill pink" id="techBar"></div>
+                    </div>
+                    <span class="rating-value" id="techValue">--</span>
+                </div>
+                <div class="rating-item">
+                    <span class="rating-label">Resume Score</span>
+                    <div class="rating-bar-bg">
+                        <div class="rating-bar-fill purple" id="resumeBar"></div>
+                    </div>
+                    <span class="rating-value" id="resumeValue">--</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Detailed Feedback -->
+        <div class="section-title">Detailed Feedback</div>
+        <div class="feedback-row">
+
+            <div class="card feedback-card">
+                <h4 class="card-label strengths">✅ Strengths</h4>
+                <ul id="strengthsList"></ul>
+            </div>
+
+            <div class="card feedback-card">
+                <h4 class="card-label weaknesses">❌ Weaknesses</h4>
+                <ul id="weaknessesList"></ul>
+            </div>
+
+            <div class="card feedback-card">
+                <h4 class="card-label improvements">💡 Suggested Improvements</h4>
+                <ul id="improvementsList"></ul>
+            </div>
+
+        </div>
+
+        <!-- Question wise feedback -->
+        <div class="section-title">Question-wise Feedback</div>
+        <div class="questions-list" id="questionFeedbackList"></div>
+
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="result.js"></script>
+</body>
+</html>

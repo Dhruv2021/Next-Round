@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextRound — History</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="history.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">NEXT ROUND</div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="upload.html">Upload</a></li>
+            <!-- <li><a href="#">Report</a></li> -->
+            <li><a href="#" class="active">History</a></li>
+        </ul>
+        <button class="nav-btn" onclick="signInWithGoogle()">Sign In</button>
+    </nav>
+
+    <div class="history-container">
+        <h1 class="history-title">Interview History</h1>
+        <div class="history-list" id="historyList">
+            <p class="loading-text">Loading your history...</p>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="history.js"></script>
+</body>
+</html>
